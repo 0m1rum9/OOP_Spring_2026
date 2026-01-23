@@ -1,7 +1,7 @@
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-class Problem_5 {
+class Problem_5 implements Problem {
   static class Account {
     private BigDecimal balance;
     Account(BigDecimal initialBalance) {
@@ -16,7 +16,11 @@ class Problem_5 {
       return this.balance;
     }
   }
-  public static void solve(Scanner sc) {
+  private Scanner sc;
+  Problem_5(Scanner scanner) {
+    this.sc = scanner;
+  }
+  public void solve() {
     Account acc = new Account(BigDecimal.valueOf(100));
     System.out.println(acc.currentBalance());
     acc.addInterest(BigDecimal.valueOf(5));

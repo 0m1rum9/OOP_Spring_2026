@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Problem_6 {
+class Problem_6 implements Problem {
   static class MyString {
     private String string;
     MyString(String string) {
@@ -18,7 +18,11 @@ class Problem_6 {
       return this.string;
     }
   }
-  public static void solve(Scanner sc) {
+  private Scanner sc;
+  Problem_6(Scanner scanner){
+    this.sc = scanner;
+  }
+  public void solve() {
     String str = sc.nextLine();
     MyString mstr = new MyString(str);
     System.out.printf("%s is %s", mstr, (mstr.isPalindrome()) ? "a Palindrome" : "not a Palindrome");

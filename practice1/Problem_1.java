@@ -1,5 +1,6 @@
-class Problem_1 {
-  static class PrintMyName {
+
+class Problem_1 implements Problem{
+  class PrintMyName {
     PrintMyName(String name) {
       StringBuilder header = buildHeader(name)
                             .append('\n')
@@ -22,7 +23,12 @@ class Problem_1 {
       return body;
     }
   }
-  public static void solve(String name) {
+  private String name;
+  Problem_1(String name){
+    this.name = name;
+  }
+  @Override
+  public void solve() {
     new PrintMyName(name);
   }
 }

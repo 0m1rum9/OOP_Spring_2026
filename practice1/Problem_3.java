@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Problem_3 {
+class Problem_3 implements Problem {
   static class GradeConverter {
     public String convert(int grade) throws InvalidGradeException {
       if(grade >= 95 && grade <= 100)
@@ -38,7 +38,11 @@ class Problem_3 {
       }
 
   }
-  public static void solve(Scanner sc) {
+  private Scanner sc;
+  Problem_3(Scanner scanner) {
+    this.sc = scanner;
+  }
+  public void solve() {
     int grade = sc.nextInt();
     GradeConverter converter = new GradeConverter();
     try{

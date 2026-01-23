@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Problem_2 {
+class Problem_2 implements Problem {
   static class Square {
     private double length;
     Square(double length) {
@@ -16,7 +16,11 @@ class Problem_2 {
       return this.length * Math.sqrt(2);
     }
   }
-  public static void solve(Scanner sc) {
+  private Scanner sc;
+  Problem_2(Scanner scanner) {
+    this.sc = scanner;
+  }
+  public void solve() {
     double a = sc.nextDouble();
     Square sq = new Square(a);
     System.out.printf("Area: %f\nPerimeter: %f\nDiagonal: %f\n",

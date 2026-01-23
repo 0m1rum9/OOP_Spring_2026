@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-class Problem_4 {
+class Problem_4 implements Problem{
   static class QuadraticEquation {
     private double a;
     private double b;
@@ -49,8 +49,11 @@ class Problem_4 {
       this.second = second;
     }
   }
-
-  public static void solve(Scanner sc) {
+  private Scanner sc;
+  Problem_4(Scanner scanner) {
+    this.sc = scanner;
+  }
+  public void solve() {
     double a = sc.nextDouble();
     double b = sc.nextDouble();
     double c = sc.nextDouble();
