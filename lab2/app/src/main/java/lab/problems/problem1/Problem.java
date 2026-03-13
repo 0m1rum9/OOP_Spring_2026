@@ -1,13 +1,15 @@
 
 package lab.problems.problem1;
 
+import java.util.HashSet;
+
 /**
  * Problem
  */
 public class Problem implements lab.problems.Problem {
 
     public void solve() {
-        partB();
+        partC();
         
     }
 
@@ -24,4 +26,15 @@ public class Problem implements lab.problems.Problem {
         LibraryItem book = new Book("pamparam", "robert", 2001, 123, new Knowledge());
         System.out.println(book);
     }
+
+    public void partC() {
+        HashSet<Entity> h = new HashSet<>();
+        Entity e1 = new Villager(new Position(10, 10, 3), 100);
+        Entity e2 = new Villager(new Position(10, 10, 3), 100);
+        h.add(e1);
+        h.add(e2);
+        System.out.println(h.size());
+        
+    }
+    
 }

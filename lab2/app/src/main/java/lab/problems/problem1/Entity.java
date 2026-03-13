@@ -5,8 +5,9 @@ package lab.problems.problem1;
  */
 public abstract class Entity {
 
-    private Position position;
-    private int healthPoints;
+    protected Position position;
+    protected int healthPoints;
+    
     
     public Entity(Position position, int healthPoints) {
         this.position = position;
@@ -15,9 +16,23 @@ public abstract class Entity {
     
     public abstract void move(Position position);
 
+    public abstract void getPunched(int damage);
     
 
-    public abstract void getPunched();
-    
-    
+    @Override
+    public int hashCode() {
+        return position.hashCode() * healthPoints;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Entity e = (Entity)obj;
+
+        return e.position.equals(position)
+            && e.healthPoints == healthPoints;
+    }
+    public abstract void die();
 }

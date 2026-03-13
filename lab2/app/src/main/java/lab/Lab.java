@@ -10,7 +10,7 @@ public class Lab {
 
 
     public static void main(String[] args) {
-        Problem p1 = new lab.problems.problem1.Problem();
-        p1.solve();
+        Problem p = new lab.problems.problem5.Problem();
+        p.solve();
     }
 }
